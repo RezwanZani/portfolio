@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* This forces Tailwind to apply 'dark:' styles ONLY when 
+   the ".dark" class is present on the HTML element. 
+*/
+@variant dark (&:where(.dark, .dark *));
+
 /* Global color tokens (light + dark). Use Tailwind utilities or these classes/variables. */
 :root {
   /* light theme */
