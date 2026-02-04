@@ -48,6 +48,15 @@ export default {
           900: '#134e4a',
         },
       },
+      keyframes: {
+        'deep-pulse': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.2' },
+          '50%': { transform: 'scale(1.2)', opacity: '0.3' },
+        },
+      },
+      animation: {
+        'deep-pulse': 'deep-pulse 2s ease-in-out infinite', // 8s duration for a slow, deep feel
+      },
     },
   },
   plugins: [],

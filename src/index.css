@@ -122,4 +122,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    text-stroke: 1px rgb(255, 255, 255);
+  }
 }

@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes deep-pulse {
+  0%, 100% {
+    opacity: 0.7; /* Visible peak */
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.05; /* Near vanishing point */
+    transform: scale(0.85); /* Shrinks slightly as it fades */
+  }
+}
+
+.animate-deep-pulse {
+  animation: deep-pulse 5s ease-in-out infinite;
+}
+
+@keyframes visible-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+}
+
+.animate-visible-pulse {
+  animation: visible-pulse 3s ease-in-out infinite;
+}
