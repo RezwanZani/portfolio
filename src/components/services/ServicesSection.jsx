@@ -4,7 +4,7 @@ import services from '../../data/services';
 const Services = () => {
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 bg-slate-200/50 dark:bg-gray-900 relative overflow-hidden place-items-center justify-center">
+    <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 bg-slate-200/50 dark:bg-gray-900/80 relative overflow-hidden place-items-center justify-center">
       <div className="container mx-auto max-w-[1400px] xl:max-w-[1200px] 2xl:max-w-[1280px]">
         
         {/* Section Header */}

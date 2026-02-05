@@ -9,9 +9,8 @@ const navItems = [
   { name: "Education", url: "#" },
 ];
 
-function Header() {
+function Header({ darkMode, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { darkMode, toggleTheme } = useTheme();
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
