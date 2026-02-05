@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import useTheme from './hooks/useTheme';
 import SkillSection from './components/skills/SkillSection';
 import Services from './components/services/ServicesSection';
+import Projects from './components/projects/Projects';
 
 function App() {
   useTheme(); 
@@ -61,6 +62,8 @@ function App() {
       </div>
 
       <Services />
+
+      <Projects />
       
       {/* Footer would go here */}
     </>
