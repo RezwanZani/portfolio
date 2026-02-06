@@ -36,8 +36,8 @@ export default function About() {
                 </div>
 
                 {/* Personal Info Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start justify-center text-slate-600 dark:text-slate-300 text-lg">
-                    <div className="flex flex-col items-center justify-center w-full p-4 dark:bg-gray-800 bg-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start justify-center text-slate-600 dark:text-slate-300 text-lg mb-12 md:mb-0">
+                    <div className="flex flex-col items-center justify-center w-full p-4 dark:bg-gray-800 bg-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border">
                         <img
                             src="src/assets/rezwan.jpg"
                             alt="Rezwan Zani"
@@ -59,7 +59,7 @@ export default function About() {
                         <div className="flex flex-col gap-4 p-4 w-full">
                             
                             {/* University */}
-                            <div className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300`}>                                
+                            <div className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border`}>                                
                                     
                                     <img src="src/assets/aaub.png"
                                             alt="AAUB"
@@ -75,7 +75,7 @@ export default function About() {
 
                             {/* Affiliation */}
                             {affiliations.map((item, index) => (
-                                <div key={index} className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300`}>                                
+                                <div key={index} className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700 dark:border`}>                                
                                     <div className="relative inset-0 my-auto">
                                     <img src={item.logo}
                                             alt={item.name}

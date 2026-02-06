@@ -5,6 +5,11 @@ const Services = () => {
 
   return (
     <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 bg-slate-200/50 dark:bg-gray-900/80 relative overflow-hidden place-items-center justify-center">
+      
+      {/* Decoration: Faint Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+      <div className="container mx-auto max-w-[1400px] xl:max-w-[1200px] 2xl:max-w-[1280px] relative z-10"></div>
+
       <div className="container mx-auto max-w-[1400px] xl:max-w-[1200px] 2xl:max-w-[1280px]">
         
         {/* Section Header */}

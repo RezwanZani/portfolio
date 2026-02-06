@@ -4,47 +4,15 @@ import projects from '../../data/projects';
 const Projects = () => {
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-8 lg:px-10 overflow-hidden relative">
+    <section id="projects" className="py-20 px-4 md:px-8 lg:px-10 overflow-hidden relative bg-slate-200/50 dark:bg-gray-900/80 transition-colors duration-300">
+      
+      {/* Decoration: Faint Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+      <div className="container mx-auto max-w-[1400px] xl:max-w-[1200px] 2xl:max-w-[1280px] relative z-10"></div>
+
+
       <div className="container mx-auto px-4">
-
-        {/* 1. Top Left - Blue */}
-        <div className="absolute top-[-10%] left-[-8%] w-[450px] h-[450px] rounded-full 
-          bg-blue-400/20 dark:bg-blue-500/10 blur-[80px] animate-deep-pulse -z-10"></div>
-
-        {/* 2. Top Center - Amber */}
-        <div className="absolute top-[-12%] left-[40%] w-[400px] h-[400px] rounded-full 
-          bg-amber-300/20 dark:bg-amber-400/10 blur-[80px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '1s' }}></div>
-
-        {/* 3. Top Right - Cyan */}
-        <div className="absolute top-[-8%] right-[-10%] w-[500px] h-[500px] rounded-full 
-          bg-cyan-500/20 dark:bg-cyan-400/10 blur-[80px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '2s' }}></div>
-
-        {/* 4. Middle Left - Indigo */}
-        <div className="absolute top-[45%] left-[-12%] w-[400px] h-[400px] rounded-full 
-          bg-indigo-400/20 dark:bg-indigo-500/10 blur-[90px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '3s' }}></div>
-
-        {/* 5. Middle Center - Purple */}
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full 
-          bg-purple-500/20 dark:bg-purple-400/10 blur-[90px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '4s' }}></div>
-
-        {/* 6. Middle Right - Rose */}
-        <div className="absolute top-[40%] right-[-10%] w-[420px] h-[420px] rounded-full 
-          bg-rose-400/20 dark:bg-rose-500/10 blur-[70px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '5s' }}></div>
-
-        {/* 7. Bottom Left - Pink */}
-        <div className="absolute bottom-[-10%] left-[-5%] w-[480px] h-[480px] rounded-full 
-          bg-pink-500/20 dark:bg-pink-400/10 blur-[80px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '1.5s' }}></div>
-
-        {/* 8. Bottom Right - Teal */}
-        <div className="absolute bottom-[-8%] right-[-8%] w-[400px] h-[400px] rounded-full 
-          bg-teal-400/20 dark:bg-teal-500/10 blur-[80px] animate-deep-pulse -z-10" 
-          style={{ animationDelay: '2.5s' }}></div>
 
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">

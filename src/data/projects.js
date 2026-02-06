@@ -5,20 +5,20 @@ const projects = [
     category: 'Web Application',
     description: 'A feature-rich auction platform with complex state management. Handles real-time bidding logic, budget tracking, and a full undo/redo history system using LocalStorage.',
     tech: ['Vanilla JS', 'ES6+', 'LocalStorage', 'CSS3'],
-    image: 'https://placehold.co/600x400/0ea5e9/ffffff?text=Auction+App', // Replace with your screenshot
-    github: '#', // Add your repo link
-    live: '#',   // Add your live link
+    image: 'src/assets/projects/cricket-auction-app.png', // Replace with your screenshot
+    github: 'https://github.com/RezwanZani/cricket-auction-app', // Add your repo link
+    live: null,   // Add your live link
     featured: true, // Highlights the card slightly
 },
 {
     id: 2,
-    title: 'Rover71 GCS Portal',
-    category: 'Avionics Interface',
-    description: 'The frontend for the Ground Control Station. Visualizes rover data and manages team recruitment. Built as part of the AAUB Mars Rover Team.',
-    tech: ['React', 'Tailwind CSS', 'Vite', 'Team Git'],
-    image: 'https://placehold.co/600x400/0f766e/ffffff?text=Rover71+Portal',
+    title: 'Rover71 Website with Team management',
+    category: 'Team Management',
+    description: 'A comprehensive team management website featuring member profiles, project tracking, and collaborative tools. Built with modern React and styled using Tailwind CSS for a responsive design.',
+    tech: ['React', 'Next.js', 'Firebase', 'Resend', 'Cloudinary', 'Tailwind CSS', 'Vite', 'Team Git'],
+    image: 'src/assets/projects/rover71-website.png',
     github: '#',
-    live: '#',
+    live: 'https://rover-71.vercel.app',
     featured: false,
 },
 ];

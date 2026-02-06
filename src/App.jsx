@@ -7,6 +7,8 @@ import Projects from './components/projects/Projects';
 import ParticleBackground from './components/ParticleBackground';
 import WorkProcess from './components/WorkProcess';
 import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   const { darkMode, toggleTheme } = useTheme();
@@ -22,11 +24,10 @@ function App() {
 
       <Services />
       <WorkProcess />
-
       <Projects />
-
       <About />
-      {/* Footer would go here */}
+      <Contact />
+      <Footer />
     </>
   );
 }
