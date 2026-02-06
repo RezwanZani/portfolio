@@ -6,6 +6,7 @@ import Services from './components/services/ServicesSection';
 import Projects from './components/projects/Projects';
 import ParticleBackground from './components/ParticleBackground';
 import WorkProcess from './components/WorkProcess';
+import About from './components/About';
 
 function App() {
   const { darkMode, toggleTheme } = useTheme();
@@ -23,7 +24,8 @@ function App() {
       <WorkProcess />
 
       <Projects />
-      
+
+      <About />
       {/* Footer would go here */}
     </>
   );

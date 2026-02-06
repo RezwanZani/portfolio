@@ -65,7 +65,7 @@ const Projects = () => {
             >
               
               {/* Image Window */}
-              <div className="relative h-48 overflow-hidden bg-slate-200 dark:bg-slate-950">
+              <div className="relative h-48 rounded-xl p-2 overflow-hidden">
                 {/* Overlay - visible on mobile, hover on desktop */}
                 <div className="absolute inset-0 md:bg-slate-900/50 dark:md:bg-slate-950/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center md:justify-center gap-4 z-10">
                   <div className="absolute bottom-5 right-5 md:static flex gap-4">
@@ -84,11 +84,11 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full rounded-xl group-hover:rounded-none object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Category Badge */}
-                <div className="absolute top-3 left-3 px-2 py-1 bg-gradient-to-r from-cyan-500 to-purple-600 backdrop-blur-sm text-xs font-medium text-white rounded">
+                <div className="absolute top-4 left-4 px-2 py-1 bg-gradient-to-r from-cyan-500 to-purple-600 backdrop-blur-sm text-xs font-medium text-white rounded">
                   {project.category}
                 </div>
               </div>
