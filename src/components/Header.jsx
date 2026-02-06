@@ -4,9 +4,10 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navItems = [
   { name: "Home", url: "#" },
-  { name: "Projects", url: "#" },
-  { name: "Service", url: "#" },
-  { name: "Education", url: "#" },
+  { name: "Service", url: "#services" },
+  { name: "Projects", url: "#projects" },
+  { name: "About", url: "#about" },
+  { name: "Contact", url: "#contact" },
 ];
 
 function Header({ darkMode, toggleTheme }) {
@@ -53,7 +54,7 @@ function Header({ darkMode, toggleTheme }) {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
             >
               {darkMode ? (
                 <Moon className="w-5 h-5 text-indigo-400" />
@@ -63,10 +64,10 @@ function Header({ darkMode, toggleTheme }) {
             </button>
 
             <a
-              href="#"
-              className="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors"
+              href="#contact"
+              className="md:block bg-indigo-600 text-white px-2 py-1 md:px-5 md:py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors"
             >
-              Contact
+              Hire Me
             </a>
 
             {/* Mobile Toggle Button */}

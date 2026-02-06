@@ -1,6 +1,37 @@
+import { useState } from 'react';
 import { Mail, MapPin, Send, Github, Linkedin, Facebook, Instagram, Phone, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        setIsLoading(true);
+
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+          subject: e.target.subject.value || "Hello!",
+            message: e.target.message.value,
+        };
+
+        // Assuming you set up an endpoint at /api/send
+        const response = await fetch('/api/send', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+            'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            alert("Message sent!");
+        } else {
+            alert("Error sending message.");
+        }
+        setIsLoading(false);
+        };
+
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 bg-slate-200/50 dark:bg-gray-900/80 relative overflow-hidden">
       
@@ -110,7 +141,8 @@ const Contact = () => {
             <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-cyan-500/70 dark:border-cyan-400/70 opacity-50"></div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-cyan-500/70 dark:border-cyan-400/70 opacity-50"></div>
 
-            <form className="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl relative z-10">
+              <form onSubmit={handleSubmit}
+                 className="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl relative z-10">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2">
@@ -120,8 +152,10 @@ const Contact = () => {
                   <input 
                     type="text" 
                     id="name" 
+                    name="name"
                     className="w-full bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 transition-colors"
-                    placeholder="Enter your name" 
+                    placeholder="Enter your name"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -131,10 +165,25 @@ const Contact = () => {
                   <input 
                     type="email" 
                     id="email" 
+                    name="email"
                     className="w-full bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 transition-colors"
-                    placeholder="name@example.com" 
+                    placeholder="name@example.com"
+                    required
                   />
                 </div>
+              </div>
+
+              <div className="space-y-2 mb-6">
+                <label htmlFor="subject" className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  className="w-full bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 transition-colors"
+                  placeholder="Hello!"
+                />
               </div>
 
               <div className="space-y-2 mb-8">
@@ -143,18 +192,21 @@ const Contact = () => {
                 </label>
                 <textarea 
                   id="message" 
+                  name="message"
                   rows="5"
                   className="w-full bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 transition-colors resize-none"
-                  placeholder="Describe your mission requirements..." 
+                  placeholder="Describe your mission requirements..."
+                  required
                 ></textarea>
               </div>
 
               <button 
                 type="submit" 
+                disabled={isLoading}
                 className="w-full bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 hover:from-cyan-500 hover:via-purple-500 hover:to-pink-500 text-white font-bold py-4 rounded-lg shadow-lg shadow-cyan-600/20 transition-all flex items-center justify-center gap-2 group"
               >
                 <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                Transmit Message
+                {isLoading ? "Transmitting Message..." : "Transmit Message"}
               </button>
 
             </form>
