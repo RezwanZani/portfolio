@@ -6,19 +6,19 @@ export default function About() {
             name: "AAUB Rover-71",
             role: "Core Software Team Member",
             duration: "2023 - Present",
-            logo: "src/assets/rover71.png"
+            logo: "/assets/rover71.png"
         },
         {
             name: "AAUB AI & Robotics Club",
             role: "Software Team Member",
             duration: "2021 - Present",
-            logo: "src/assets/aairc.png"
+            logo: "/assets/aairc.png"
         },
         {
             name: "Freelance",
             role: "Frontend Developer",
             duration: "2022 - Present",
-            logo: "src/assets/freelance.png"
+            logo: "/assets/freelance.png"
         }
     ];
 
@@ -39,13 +39,13 @@ export default function About() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start justify-center text-slate-600 dark:text-slate-300 text-lg mb-12 md:mb-0">
                     <div className="flex flex-col items-center justify-center w-full p-4 dark:bg-gray-800 bg-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border">
                         <img
-                            src="src/assets/rezwan.jpg"
+                            src="/assets/rezwan.jpg"
                             alt="Rezwan Zani"
                             className={`
                                  rounded-xl object-cover m-4
                                 md:w-max-w-64 md:h-max-w-64
                                 `}
-                                />
+                        />
                         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100">Md. Rezwan Zani</h2>
                         <p className="text-center text-lg text-gray-700 dark:text-gray-300 mt-6 text-justify">
                             I am an Avionics Engineering student who bridges the gap between hardware laws and software logic. Currently a core member of the Rover-71 software team and a Frontend developer specializing in React, Next.js, and C++. I don't just write code; I engineer reliable systems.
@@ -57,30 +57,30 @@ export default function About() {
                     <div className="flex flex-col items-center justify-between w-full">
                         <h3 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">Affiliations</h3>
                         <div className="flex flex-col gap-4 p-4 w-full">
-                            
+
                             {/* University */}
-                            <div className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border`}>                                
-                                    
-                                    <img src="src/assets/aaub.png"
-                                            alt="AAUB"
-                                            className="relative top-1/2 -translate-y-1/2 border-4 border-gray-900 w-25 h-25 rounded-full object-cover"
-                                            />
-                                    <div className="w-full  -mt-8">
-                                        <span className="text-xl md:text-2xl font-semibold text-center w-full text-blue-900 dark:text-sky-400 break-words"> Aviation and Aerospace University, Bangladesh </span>
-                                        <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> B.Sc. in Avionics Engineering (Level 2) </span>
-                                        <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Session: 2023-24 </span>
-                                        <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Expected Graduation: 2028 </span>
-                                    </div>
+                            <div className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border`}>
+
+                                <img src="/assets/aaub.png"
+                                    alt="AAUB"
+                                    className="relative top-1/2 -translate-y-1/2 border-4 border-gray-900 w-25 h-25 rounded-full object-cover"
+                                />
+                                <div className="w-full  -mt-8">
+                                    <span className="text-xl md:text-2xl font-semibold text-center w-full text-blue-900 dark:text-sky-400 break-words"> Aviation and Aerospace University, Bangladesh </span>
+                                    <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> B.Sc. in Avionics Engineering (Level 2) </span>
+                                    <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Session: 2023-24 </span>
+                                    <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Expected Graduation: 2028 </span>
                                 </div>
+                            </div>
 
                             {/* Affiliation */}
                             {affiliations.map((item, index) => (
-                                <div key={index} className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700 dark:border`}>                                
+                                <div key={index} className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700 dark:border`}>
                                     <div className="relative inset-0 my-auto">
-                                    <img src={item.logo}
+                                        <img src={item.logo}
                                             alt={item.name}
                                             className="p-1 w-15 h-15 rounded-full object-cover"
-                                            />
+                                        />
                                     </div>
 
                                     <div className="flex-shrink-0">

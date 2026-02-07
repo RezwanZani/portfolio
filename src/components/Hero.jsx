@@ -10,12 +10,12 @@ const Hero = () => {
                     md:py-30 py-30 md:px-10 px-3
             `}
     >
-      
+
       {/* --- Background Decorations --- */}
-      
+
       {/* 1. Dot Pattern (Simulated with SVG for developer vibe) */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(#2563eb 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
+      <div className="absolute inset-0 z-0 opacity-[0.03]"
+        style={{ backgroundImage: 'radial-gradient(#2563eb 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
       </div>
 
       {/* 2. Abstract Blob Background */}
@@ -24,10 +24,10 @@ const Hero = () => {
 
       {/* --- Main Grid Container --- */}
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+
         {/* --- Left Column: Information (Flexbox) --- */}
         <div className="flex flex-col gap-2 text-center lg:text-left animate-fade-in-up">
-          
+
           <div className={`
                         inline-block px-4 py-2 bg-blue-100 text-blue-700 font-semibold rounded-full
                         dark:bg-sky-600/50 dark:text-slate-200 dark:border dark:border-blue-400
@@ -66,28 +66,28 @@ const Hero = () => {
 
         {/* --- Right Column: Photo & Graphics --- */}
         <div className="relative flex justify-center items-center group">
-          
+
           {/* Code Brackets Decoration */}
           <span className={`
                           absolute -left-6 top-5 md:-left-4 md:top-10 
                           text-8xl md:text-9xl text-blue-200 md:text-blue-100 dark:text-sky-900 font-mono font-bold 
                           select-none -z-10 animate-[bounce_3s_infinite]
             `}>
-                          {`<`}
+            {`<`}
           </span>
           <span className={`
                             absolute -right-6 bottom-0 md:-right-4 md:bottom-10 
                             text-8xl md:text-9xl text-blue-300 dark:text-sky-800 md:dark:text-gray-800 font-mono font-bold 
                             select-none -z-10 animate-[bounce_4s_infinite]
             `}>
-                          {`/>`}
+            {`/>`}
           </span>
 
           {/* Image Wrapper */}
           <div className="relative w-80 h-80 md:w-96 md:h-96">
-            <img 
-              src="src/assets/rezwan_formal.jpg" 
-              alt="Developer" 
+            <img
+              src="/assets/rezwan_formal.jpg"
+              alt="Developer"
               className="w-full h-full object-cover border-4 border-white shadow-2xl transition-all duration-500 ease-in-out
                          rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] 
                          group-hover:rounded-[50%]"
@@ -103,37 +103,37 @@ const Hero = () => {
                 <p className="text-xs text-slate-500">Experience</p>
               </div>
             </div>
-            
+
             {/* --- SPREAD OUT TECH ICONS --- */}
 
             {/* 1. Top Left: React */}
             <div className="absolute -top-4 -left-4 bg-white dark:bg-sky-100 p-2 rounded-full shadow-lg animate-pulse">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-8 h-8" alt="React" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-8 h-8" alt="React" />
             </div>
 
             {/* 2. Top Right: C++ */}
             <div className="absolute -top-6 right-10 bg-white dark:bg-sky-100 p-2 rounded-full shadow-lg animate-[bounce_3s_infinite] delay-100">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" className="w-8 h-8" alt="C++" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" className="w-8 h-8" alt="C++" />
             </div>
 
             {/* 3. Mid Right: JavaScript */}
             <div className="absolute top-20 -right-10 bg-white dark:bg-sky-100  p-2 rounded-full shadow-lg animate-[bounce_2s_infinite] delay-200">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className="w-8 h-8" alt="JavaScript" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className="w-8 h-8" alt="JavaScript" />
             </div>
 
             {/* 4. Mid Left: CSS3 */}
             <div className="absolute top-32 -left-10 bg-white dark:bg-sky-100 p-2 rounded-full shadow-lg animate-[bounce_4s_infinite] delay-300">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" className="w-8 h-8" alt="CSS3" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" className="w-8 h-8" alt="CSS3" />
             </div>
 
             {/* 5. Bottom Right: ROS */}
             <div className="absolute bottom-20 -right-6 bg-white dark:bg-sky-100 p-2 rounded-full shadow-lg animate-pulse delay-500">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" className="w-8 h-8" alt="ROS 2" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" className="w-8 h-8" alt="ROS 2" />
             </div>
 
             {/* 6. Bottom Center: C (Shifted slightly right to avoid Experience card) */}
             <div className="absolute -bottom-10 left-1/2 bg-white dark:bg-sky-100 p-2 rounded-full shadow-lg animate-[bounce_3.5s_infinite] delay-700">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" className="w-8 h-8" alt="C" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" className="w-8 h-8" alt="C" />
             </div>
 
           </div>
