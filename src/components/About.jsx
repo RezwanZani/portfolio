@@ -1,5 +1,7 @@
 
 
+import { motion } from 'framer-motion';
+
 export default function About() {
     const affiliations = [
         {
@@ -26,18 +28,30 @@ export default function About() {
         <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden place-items-center justify-center transition-colors duration-300">
             <div className="container mx-auto max-w-[1400px] xl:max-w-[1200px] 2xl:max-w-[1280px]">
                 {/* Section Header */}
-                <div className="text-center mb-12 lg:mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12 lg:mb-16"
+                >
                     <h2 className="text-3xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 dark:from-cyan-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text py-2 text-transparent">
                         About Me
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-4">
                         Discover more about my journey, skills, and what drives me.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Personal Info Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start justify-center text-slate-600 dark:text-slate-300 text-lg mb-12 md:mb-0">
-                    <div className="flex flex-col items-center justify-center w-full p-4 dark:bg-gray-800 bg-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border">
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex flex-col items-center justify-center w-full p-4 dark:bg-gray-800 bg-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border"
+                    >
                         <img
                             src="/assets/rezwan.jpg"
                             alt="Rezwan Zani"
@@ -50,16 +64,25 @@ export default function About() {
                         <p className="text-center text-lg text-gray-700 dark:text-gray-300 mt-6 text-justify">
                             I am an Avionics Engineering student who bridges the gap between hardware laws and software logic. Currently a core member of the Rover-71 software team and a Frontend developer specializing in React, Next.js, and C++. I don't just write code; I engineer reliable systems.
                         </p>
-                    </div>
+                    </motion.div>
 
 
                     {/* Affiliations Section */}
-                    <div className="flex flex-col items-center justify-between w-full">
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex flex-col items-center justify-between w-full"
+                    >
                         <h3 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">Affiliations</h3>
                         <div className="flex flex-col gap-4 p-4 w-full">
 
                             {/* University */}
-                            <div className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300  border border-gray-200 dark:border-gray-700 dark:border`}>
+                            <motion.div
+                                whileHover={{ scale: 1.02 }}
+                                className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300  border border-gray-200 dark:border-gray-700 dark:border`}
+                            >
 
                                 <img src="/assets/aaub.png"
                                     alt="AAUB"
@@ -71,11 +94,19 @@ export default function About() {
                                     <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Session: 2023-24 </span>
                                     <span className="text-lg text-left text-gray-500 dark:text-gray-400 block"> Expected Graduation: 2028 </span>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Affiliation */}
                             {affiliations.map((item, index) => (
-                                <div key={index} className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700 dark:border`}>
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.02 }}
+                                    className={`flex items-start gap-2 p-4 rounded-lg bg-slate-50 dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 dark:border`}
+                                >
                                     <div className="relative inset-0 my-auto">
                                         <img src={item.logo}
                                             alt={item.name}
@@ -88,10 +119,10 @@ export default function About() {
                                         <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400 block"> {item.role} </span>
                                         <span className="text-sm md:text-base text-gray-500 dark:text-gray-400 block"> {item.duration} </span>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

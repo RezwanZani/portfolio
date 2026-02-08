@@ -8,38 +8,62 @@
 /* Global color tokens (light + dark). Use Tailwind utilities or these classes/variables. */
 :root {
   /* light theme */
-  --bg: #f8fafc;            /* slate-50 */
-  --surface: #ffffff;       /* card background */
-  --text: #0f172a;          /* slate-900 */
-  --muted: #64748b;         /* slate-500 */
-  --border: #e6eef9;        /* light border */
-  --primary: #0ea5e9;       /* sky-500 / skyblue-600 */
+  --bg: #f8fafc;
+  /* slate-50 */
+  --surface: #ffffff;
+  /* card background */
+  --text: #0f172a;
+  /* slate-900 */
+  --muted: #64748b;
+  /* slate-500 */
+  --border: #e6eef9;
+  /* light border */
+  --primary: #0ea5e9;
+  /* sky-500 / skyblue-600 */
   --primary-600: #0284c7;
-  --accent: #2563eb;        /* blue-600 */
+  --accent: #2563eb;
+  /* blue-600 */
   --accent-600: #1e40af;
-  --teal: #14b8a6;          /* tealsoft-500 */
-  --scroll-thumb: #cbd5e1;  /* slate-300 */
+  --teal: #14b8a6;
+  /* tealsoft-500 */
+  --scroll-thumb: #cbd5e1;
+  /* slate-300 */
 }
 
 /* Dark theme tokens (class-based) */
 .dark {
-  --bg: #071029;            /* deep navy / navy-900 */
-  --surface: #0f1724;       /* dark card */
-  --text: #e6eef9;          /* slate-100 */
-  --muted: #94a3b8;         /* slate-400 */
+  --bg: #071029;
+  /* deep navy / navy-900 */
+  --surface: #0f1724;
+  /* dark card */
+  --text: #e6eef9;
+  /* slate-100 */
+  --muted: #94a3b8;
+  /* slate-400 */
   --border: #17223a;
-  --primary: #38bdf8;       /* lighter sky on dark */
+  --primary: #38bdf8;
+  /* lighter sky on dark */
   --primary-600: #0ea5e9;
-  --accent: #60a5fa;        /* blue-400 */
+  --accent: #60a5fa;
+  /* blue-400 */
   --accent-600: #3b82f6;
-  --teal: #2dd4bf;          /* tealsoft-400 */
-  --scroll-thumb: #475569;  /* slate-700 */
+  --teal: #2dd4bf;
+  /* tealsoft-400 */
+  --scroll-thumb: #475569;
+  /* slate-700 */
 }
 
 /* Base */
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Custom Selection Color */
+  ::selection {
+    background-color: var(--primary);
+    /* or your preferred color variable */
+    color: white;
   }
 
   body {
@@ -55,13 +79,16 @@
     width: 8px;
     height: 8px;
   }
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: var(--scroll-thumb);
     border-radius: 9999px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     filter: brightness(0.9);
   }
@@ -73,6 +100,7 @@
     @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 text-white shadow-sm;
     background-color: var(--primary);
   }
+
   .btn-primary:hover {
     background-color: var(--primary-600);
   }
@@ -81,6 +109,7 @@
     @apply px-4 py-2 rounded-md font-medium text-white transition;
     background-color: var(--accent);
   }
+
   .card {
     @apply rounded-xl shadow-sm border p-4;
     background-color: var(--surface);
@@ -96,18 +125,23 @@
   .bg-primary {
     background-color: var(--primary) !important;
   }
+
   .text-primary {
     color: var(--primary) !important;
   }
+
   .bg-accent {
     background-color: var(--accent) !important;
   }
+
   .text-accent {
     color: var(--accent) !important;
   }
+
   .bg-teal {
     background-color: var(--teal) !important;
   }
+
   .text-teal {
     color: var(--teal) !important;
   }

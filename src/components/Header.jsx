@@ -1,6 +1,7 @@
 import useTheme from "../hooks/useTheme";
 import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { name: "Home", url: "#" },
@@ -19,7 +20,10 @@ function Header({ darkMode, toggleTheme }) {
          1. Flex-col: Stacks the "Top Bar" and "Mobile Menu" vertically.
          2. Overflow-hidden: Ensures the menu doesn't spill out when closed.
       */}
-      <nav
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
         className={`
           flex flex-col w-full max-w-5xl
           bg-white/80 dark:bg-gray-800/80 
@@ -40,19 +44,23 @@ function Header({ darkMode, toggleTheme }) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <motion.a
                 key={item.name}
                 href={item.url}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
                 className="text-sm font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 {item.name}
-              </a>
+              </motion.a>
             ))}
           </div>
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <button
+            <motion.button
+              whileHover={{ rotate: 180 }}
+              transition={{ duration: 0.3 }}
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
             >
@@ -61,14 +69,16 @@ function Header({ darkMode, toggleTheme }) {
               ) : (
                 <Sun className="w-5 h-5 text-amber-500" />
               )}
-            </button>
+            </motion.button>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="#contact"
               className="md:block bg-indigo-600 text-white px-2 py-1 md:px-5 md:py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors"
             >
               Hire Me
-            </a>
+            </motion.a>
 
             {/* Mobile Toggle Button */}
             <button
@@ -82,25 +92,29 @@ function Header({ darkMode, toggleTheme }) {
 
         {/* --- ROW 2: MOBILE MENU (The Hidden Drawer) --- */}
         {/* NOTE: This div is OUTSIDE the "Top Bar" div above */}
-        <div
-          className={`
-            md:hidden flex flex-col items-center gap-4
-            transition-[max-height, opacity, padding] duration-300 ease-in-out
-            ${isOpen ? "max-h-64 opacity-100 pb-6" : "max-h-0 opacity-0 pb-0"}
-          `}
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              className="text-gray-700 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400"
-              onClick={() => setIsOpen(false)}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden flex flex-col items-center gap-4 overflow-hidden pb-6"
             >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </nav>
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  className="text-gray-700 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
     </header>
   );
 }

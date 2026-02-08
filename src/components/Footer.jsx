@@ -1,4 +1,5 @@
 import { ArrowUp, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -9,7 +10,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-slate-200/50 dark:bg-gray-900/80 py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative overflow-hidden bg-slate-200/50 dark:bg-gray-900/80 py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10"
+    >
       {/* Decoration: Faint Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -45,7 +52,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

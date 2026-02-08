@@ -1,4 +1,6 @@
 import { Map, Workflow, Cpu, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+
 const developmentProcess = [
   {
     title: "Discovery & Strategy",
@@ -31,23 +33,39 @@ function WorkProcess() {
     <section id="work-process" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 bg-none dark:bg-none relative overflow-hidden">
       <div className="container mx-auto max-w-[1000px]">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 lg:mb-16"
+        >
           <h2 className="text-3xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 dark:from-cyan-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text py-2 text-transparent">
             Work Process
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             A glimpse into my approach to software development, from ideation to deployment.
           </p>
-        </div>
+        </motion.div>
 
         {/* Process Steps - Use flex-col to allow zig-zagging */}
         <div className="flex flex-col gap-10 md:gap-0 relative">
           {/* Optional: Add a vertical center line for visual "pathway" on desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-slate-700 -translate-x-1/2" />
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-slate-700 -translate-x-1/2"
+          />
 
           {developmentProcess.map((step, index) => (
-            <div 
-              key={index} 
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
               className={`
                 relative z-10 w-[80%] md:w-[45%] 
                 flex flex-col items-start 
@@ -60,19 +78,19 @@ function WorkProcess() {
               `}
             >
               <div className="flex items-center gap-4 mb-4">
-                 <div className="p-3 bg-sky-100 dark:bg-sky-900/30 rounded-lg">
-                    <step.Icon className="w-8 h-8 text-sky-600 dark:text-sky-400" />
-                 </div>
-                 <span className="text-5xl font-black opacity-10 absolute right-6 top-6">0{index + 1}</span>
+                <div className="p-3 bg-sky-100 dark:bg-sky-900/30 rounded-lg">
+                  <step.Icon className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                </div>
+                <span className="text-5xl font-black opacity-10 absolute right-6 top-6">0{index + 1}</span>
               </div>
-              
+
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                 {step.title}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 text-left">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
